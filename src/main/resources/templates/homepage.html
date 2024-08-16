@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Payment Page</title>
+    <link rel="stylesheet" href="css/homepage.css">
+    <script src="js/homepage.js"></script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  </head>
+  <body>
+    <div class="form">
+        <div class="title">Payment Form - RazorPay</div>
+        <div class="subtitle">Enter Your details</div>
+        <div class="input-container ic1">
+          <input id="name" class="input" type="text" placeholder="Name" />
+        </div>
+        <div class="input-container ic2">
+          <input id="email" class="input" type="text" placeholder="Email" />
+        </div>
+        <div class="input-container ic2">
+          <input id="phone" class="input" type="text" placeholder="Phone Number" />
+        </div>
+        <div class="input-container ic2">
+            <select id="course" required onchange="amountfunc(value);">
+                <option value="" disabled selected hidden>Select Course</option>
+                <option value="frontend">Frontend</option>
+                <option value="backend">Backend</option>
+                <option value="fullstack">Fullstack</option>
+                <option value="dsa">DSA</option>
+            </select>
+        </div>
+        <div class="input-container ic2">
+          <input id="amount" class="input" type="text" placeholder="Amount" />
+        </div>
+        <div class="input-container ic2">
+          <button type="text" id="paybutton" class="submit">Pay</button>
+        </div>
+</body>
+</html>
