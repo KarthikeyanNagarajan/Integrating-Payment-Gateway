@@ -35,7 +35,7 @@ pipeline {
 	        script {
 	            withDockerRegistry(credentialsId: 'docker', toolName: 'docker', url: 'https://hub.docker.com') {
                         sh "docker build -t karthikeyan97/integrating-payment-gateway:latest ."
-                        sh "docker push"
+                        sh "docker image push --all-tags karthikeyan97/integrating-payment-gateway"
                     }
 		}
 	    }
