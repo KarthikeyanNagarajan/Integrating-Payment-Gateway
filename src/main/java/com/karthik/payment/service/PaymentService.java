@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.Map;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import com.karthik.payment.entity.Order;
@@ -16,10 +17,16 @@ public class PaymentService {
 
 	@Autowired
 	private OrderRepository orderRepository;
+	
+	@Value(value = "${razorpay.key.id}")
+	private String key;
+	
+	@Value(value = "${razorpay.key.secret}")
+	private String secret;
 
 	public Order createOrderPayment(Order order) throws RazorpayException {
 
-		RazorpayClient razorpayClient = new RazorpayClient("rzp_test_c8QC2MHekRyfXa", "hhykyW8C3oN38D8W0LWzvith");
+		RazorpayClient razorpayClient = new RazorpayClient(key, secret);
 		JSONObject orderRequest = new JSONObject();
 		orderRequest.put("amount", order.getAmount() * 100);
 		orderRequest.put("currency", order.getCurrency());

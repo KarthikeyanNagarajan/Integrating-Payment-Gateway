@@ -25,7 +25,7 @@ window.onload = function(){
 	        "name": order.name,
 	        "description": "Test Payment Transaction",
 	        "order_id": order.paymentId,
-	        "callback_url": "http://localhost:8080/paymentCallback",
+	        "callback_url": "http://localhost:8082/paymentCallback",
 	        "prefill": {
 	            "name": order.name,
 	            "email": order.email,
@@ -49,7 +49,7 @@ async function createOrder()
 {
     console.log("==== Order Creation In progress ====")
 
-    const response = await fetch('http://localhost:8080/createOrder', {
+    const response = await fetch('http://localhost:8082/createOrder', {
         method : 'POST',
         headers : {
             'content-Type' : 'application/json'

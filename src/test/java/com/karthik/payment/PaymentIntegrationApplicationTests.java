@@ -1,4 +1,4 @@
-package com.karthik.Payment_Integration;
+package com.karthik.payment;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
